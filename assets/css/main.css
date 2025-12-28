@@ -63,6 +63,37 @@ body::before {
     }
 }
 
+/* 0.2 Auto-Hide Navbar (Reveals on Hover) */
+nav.glass-panel {
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Show navbar when hovering the top area */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 99;
+    pointer-events: none;
+}
+
+body:has(::after:hover) nav.glass-panel,
+nav.glass-panel:hover,
+nav.glass-panel:focus-within {
+    transform: translateY(0);
+}
+
+/* Alternative: Show on mouse entering top 100px */
+@media (hover: hover) {
+    body:hover nav.glass-panel {
+        transform: translateY(0);
+    }
+}
+
 /* 2. Modern Reset */
 *,
 *::before,
