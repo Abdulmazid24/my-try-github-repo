@@ -19,9 +19,11 @@ This project was engineered to deliver a world-class User Experience (UX) that r
 -   **🧊 3D Physics Tint**: Cards react to your mouse cursor in real-time using 3D perspective calculations, creating a tactile, physical feel.
 -   **🎮 Gamified Learning**: Integrated client-side progress tracking saves your journey automatically, gamifying the education process.
 -   **👨‍💻 Live Code Playground**: Don't just read—code. A built-in IDE allows instant manipulation of the DOM directly within the learning modules.
+-   **📋 Copy-to-Clipboard**: One-click code copying with beautiful toast notifications across all code examples.
+-   **⚡ Service Worker**: Offline-first PWA with cached assets for instant loading and offline access.
 
 ## 🎓 The Curriculum
-The content is structured into four distinct academic tiers, covering the absolute cutting edge of the W3C specifications (2024/2025).
+The content is structured into five distinct academic tiers, covering the absolute cutting edge of the W3C specifications (2024/2025).
 
 | Level | Focus | Key Technologies |
 | :--- | :--- | :--- |
@@ -36,8 +38,27 @@ This project serves as a technical showcase for modern frontend practices:
 
 -   **Zero Dependencies**: 100% Vanilla HTML5, CSS3, and ES6+ JavaScript.
 -   **Performance First**: Optimized for 60fps rendering using the composite-only pipeline.
--   **Accessibility (a11y)**: Semantic HTML structure and fluid typography using `clamp()`.
+-   **Accessibility (a11y)**: WCAG 2.1 compliant with skip-to-content links, ARIA labels, keyboard focus indicators, and `prefers-reduced-motion` support.
 -   **Responsive DNA**: Fluid layouts that adapt to any device, from Watch to 8K Monitor.
+-   **PWA Ready**: Complete Service Worker implementation with offline support and asset caching.
+-   **SEO Optimized**: Open Graph tags, Twitter Cards, sitemap.xml, robots.txt, and semantic HTML.
+-   **Print-Friendly**: Professional print stylesheet for PDF export and study materials.
+
+## 🚀 Features
+
+### Core Functionality
+- ✅ **5-Tier Curriculum** - From Basic CSS to PhD-level browser internals
+- ✅ **Interactive Playground** - Live code editor with real-time preview
+- ✅ **70+ CSS Properties Reference** - Searchable encyclopedia with examples
+- ✅ **Progress Tracking** - localStorage-based gamification system
+
+### Professional Polish
+- ✅ **Offline Support** - Service Worker caches all assets for offline access
+- ✅ **Copy-to-Clipboard** - Code snippets copyable with one click
+- ✅ **Mobile Optimized** - Touch-friendly with responsive navigation
+- ✅ **Social Sharing** - Open Graph preview cards for LinkedIn/Twitter
+- ✅ **Accessibility** - WCAG 2.1 compliant with keyboard navigation
+- ✅ **Print Ready** - Optimized stylesheet for printing/PDF
 
 ## 👨‍💻 Author
 **Engineered with precision by Abdulmazid.**
