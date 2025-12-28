@@ -225,4 +225,54 @@ h1 {
     .playground-area {
         grid-template-columns: 1fr;
     }
+
+    /* Mobile Navigation */
+    nav.glass-panel {
+        flex-wrap: wrap;
+        padding: 1rem !important;
+    }
+
+    nav.glass-panel ul {
+        flex-direction: column;
+        gap: 0.5rem !important;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* Touch-friendly buttons */
+    .btn-neon {
+        min-height: 44px;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Better mobile grid */
+    .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /* Adjust text sizes */
+    h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    /* Hide nav links on very small screens, show hamburger */
+    @media (max-width: 480px) {
+        nav.glass-panel ul li {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* Performance: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
