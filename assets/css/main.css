@@ -63,16 +63,6 @@ body::before {
     }
 }
 
-/* 0.2 Auto-Hide Navbar (Reveals on Hover) */
-nav.glass-panel {
-    top: -100px !important;
-    transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-nav.glass-panel.visible {
-    top: 1rem !important;
-}
-
 /* 2. Modern Reset */
 *,
 *::before,
