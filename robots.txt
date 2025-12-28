@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://abdulmazid24.github.io/my-try-github-repo/sitemap.xml
+
+# Allow all pages
+Allow: /pages/
+Allow: /assets/
+
+# Disallow admin/draft pages if any
+Disallow: /drafts/
