@@ -2,6 +2,8 @@
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_Here-00f2ff?style=for-the-badge&logo=github)](https://abdulmazid24.github.io/my-try-github-repo/)
 [![Made by Abdulmazid](https://img.shields.io/badge/❤️_Engineered_by-Abdulmazid-7000ff?style=for-the-badge)](https://abdulmazid-portfolio.vercel.app/)
+[![PWA Ready](https://img.shields.io/badge/PWA-Ready-success?style=for-the-badge)](https://abdulmazid24.github.io/my-try-github-repo/)
+[![Accessibility](https://img.shields.io/badge/A11y-WCAG_2.1-blue?style=for-the-badge)](https://abdulmazid24.github.io/my-try-github-repo/)
 
 > "This isn't just a website. It's a statement of what is possible with the modern web."
 
