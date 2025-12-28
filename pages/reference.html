@@ -369,6 +369,71 @@
                 </div>
             </section>
 
+            <!-- 2025 EXPERIMENTAL -->
+            <section class="category-section">
+                <h2 style="color: var(--color-accent);">🔮 2025 Experimental Features</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="scope">
+                        <div class="property-name">@scope</div>
+                        <div class="property-desc">Limits CSS rules to specific DOM subtrees (scoped styles)</div>
+                        <div class="property-value">Syntax: @scope (.card) { h2 { color: red; } }</div>
+                    </div>
+                    <div class="property-item" data-name="starting-style">
+                        <div class="property-name">@starting-style</div>
+                        <div class="property-desc">Animate elements appearing from display:none or entering the DOM
+                        </div>
+                        <div class="property-value">Example: @starting-style { .popup { opacity: 0; } }</div>
+                    </div>
+                    <div class="property-item" data-name="anchor">
+                        <div class="property-name">anchor-name / position-anchor</div>
+                        <div class="property-desc">Position elements relative to other elements (Anchor Positioning API)
+                        </div>
+                        <div class="property-value">Example: anchor-name: --my-anchor; position-anchor: --my-anchor
+                        </div>
+                    </div>
+                    <div class="property-item" data-name="color-mix">
+                        <div class="property-name">color-mix()</div>
+                        <div class="property-desc">Mix two colors together in a specified color space</div>
+                        <div class="property-value">Syntax: color-mix(in oklch, red 50%, blue)</div>
+                    </div>
+                    <div class="property-item" data-name="property">
+                        <div class="property-name">@property</div>
+                        <div class="property-desc">Define custom CSS properties with type validation and inheritance
+                            control</div>
+                        <div class="property-value">Example: @property --my-color { syntax: '<color>'; inherits: false;
+                                }</div>
+                    </div>
+                    <div class="property-item" data-name="text-wrap">
+                        <div class="property-name">text-wrap: balance</div>
+                        <div class="property-desc">Automatically balances text across lines for better typography</div>
+                        <div class="property-value">Values: wrap | nowrap | balance | pretty | stable</div>
+                    </div>
+                    <div class="property-item" data-name="light-dark">
+                        <div class="property-name">light-dark()</div>
+                        <div class="property-desc">Native theme switching - returns different values for light/dark mode
+                        </div>
+                        <div class="property-value">Syntax: color: light-dark(black, white);</div>
+                    </div>
+                    <div class="property-item" data-name="scroll-snap">
+                        <div class="property-name">scroll-snap-type / scroll-snap-align</div>
+                        <div class="property-desc">Creates scroll-snapping behavior for carousels and scrollable
+                            containers</div>
+                        <div class="property-value">Example: scroll-snap-type: x mandatory; scroll-snap-align: center
+                        </div>
+                    </div>
+                    <div class="property-item" data-name="overscroll-behavior">
+                        <div class="property-name">overscroll-behavior</div>
+                        <div class="property-desc">Controls scroll chaining when reaching scroll boundaries</div>
+                        <div class="property-value">Values: auto | contain | none</div>
+                    </div>
+                    <div class="property-item" data-name="field-sizing">
+                        <div class="property-name">field-sizing</div>
+                        <div class="property-desc">Makes form inputs auto-grow to fit content</div>
+                        <div class="property-value">Values: fixed | content</div>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
         <footer
