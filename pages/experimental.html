@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: 2025 Features | Abdulmazid Portfolio</title>
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <meta name="author" content="Abdulmazid">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .demo-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+
+        /* Scroll Snap Demo */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            scrollbar-width: thin;
+        }
+
+        .scroll-item {
+            min-width: 300px;
+            height: 200px;
+            scroll-snap-align: center;
+            background: var(--gradient-glow);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Text Balance Demo */
+        .balanced-text {
+            text-wrap: balance;
+            max-width: 400px;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        /* Color Mix Demo */
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        /* @starting-style Demo */
+        .popup {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s, transform 0.5s, display 0.5s allow-discrete;
+        }
+
+        @starting-style {
+            .popup {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
+        .popup[hidden] {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 1rem; margin: 1rem auto; width: 90%; max-width: 1200px; padding: 1rem 2rem; z-index: 100; display: flex; justify-content: space-between; align-items: center;">
+        <a href="../index.html" class="logo"
+            style="font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white;">&larr; Home</a>
+        <div style="font-weight: bold; color: var(--color-text-muted);">Module 05: 2025 Features</div>
+    </nav>
+
+    <main style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+
+        <header style="margin-bottom: 4rem;">
+            <h1>The Future <br> <span style="color: var(--color-primary)">is Here</span></h1>
+            <p style="font-size: 1.2rem; color: var(--color-text-muted);">
+                These features are so new, they're still being finalized by W3C. You're witnessing the birth of
+                tomorrow's web.
+            </p>
+        </header>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem;">
+            <h2>1. Scroll Snap (Interactive Carousels)</h2>
+            <p>Create Netflix-style scroll-snapping without JavaScript.</p>
+
+            <div class="demo-container">
+                <div class="scroll-container">
+                    <div class="scroll-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">1
+                    </div>
+                    <div class="scroll-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">2
+                    </div>
+                    <div class="scroll-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">3
+                    </div>
+                    <div class="scroll-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">4
+                    </div>
+                </div>
+            </div>
+
+            <pre><code class="language-css">.container {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+}
+
+.item {
+  scroll-snap-align: center;
+}</code></pre>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem;">
+            <h2>2. text-wrap: balance</h2>
+            <p>Automatically balance text for beautiful headlines.</p>
+
+            <div class="demo-container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted);">Without balance:</p>
+                        <h3 style="max-width: 400px; line-height: 1.2;">The Future of Web Design is Absolutely
+                            Revolutionary</h3>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted);">With balance:</p>
+                        <h3 class="balanced-text">The Future of Web Design is Absolutely Revolutionary</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem;">
+            <h2>3. color-mix() Function</h2>
+            <p>Mix colors directly in CSS, no preprocessor needed.</p>
+
+            <div class="demo-container">
+                <div class="color-box" style="background: red;"></div>
+                <span style="font-size: 2rem;">+</span>
+                <div class="color-box" style="background: blue;"></div>
+                <span style="font-size: 2rem;">=</span>
+                <div class="color-box" style="background: color-mix(in oklch, red 50%, blue);"></div>
+            </div>
+
+            <pre><code class="language-css">background: color-mix(in oklch, red 50%, blue);</code></pre>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem;">
+            <h2>4. @starting-style (Entry Animations)</h2>
+            <p>Animate elements appearing from <code>display: none</code>.</p>
+
+            <div class="demo-container">
+                <button onclick="togglePopup()"
+                    style="padding: 1rem 2rem; background: var(--color-primary); border: none; border-radius: 8px; color: black; font-weight: bold; cursor: pointer;">Toggle
+                    Popup</button>
+                <div class="popup glass-panel" id="demoPopup" style="margin-top: 1rem; padding: 2rem;">
+                    <p>This popup animates IN from opacity: 0!</p>
+                </div>
+            </div>
+
+            <pre><code class="language-css">@starting-style {
+  .popup {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.popup {
+  transition: opacity 0.5s, transform 0.5s;
+}</code></pre>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem; border: 2px solid var(--color-accent);">
+            <h2 style="color: var(--color-accent);">5. @scope (Scoped CSS)</h2>
+            <p>Limit CSS rules to specific sections of your DOM.</p>
+
+            <pre><code class="language-css">@scope (.card) {
+  h2 {
+    color: var(--color-primary);
+  }
+  
+  p {
+    color: var(--color-text-muted);
+  }
+}
+
+/* These styles ONLY apply inside .card elements */</code></pre>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted);">
+                This prevents style leakage and eliminates the need for complex naming conventions like BEM.
+            </p>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 4rem;">
+            <a href="phd.html" class="btn-neon">Previous: PhD</a>
+            <a href="../index.html" class="btn-neon">Back Home</a>
+        </div>
+
+        <footer
+            style="text-align: center; margin-top: 4rem; padding-bottom: 2rem; color: var(--color-text-muted); opacity: 0.7;">
+            <p>Engineered by <a href="https://abdulmazid-portfolio.vercel.app/" target="_blank"
+                    style="color: var(--color-primary); text-decoration: none;">Abdulmazid</a></p>
+        </footer>
+
+    </main>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script>
+        function togglePopup() {
+            const popup = document.getElementById('demoPopup');
+            if (popup.hidden) {
+                popup.hidden = false;
+            } else {
+                popup.hidden = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
