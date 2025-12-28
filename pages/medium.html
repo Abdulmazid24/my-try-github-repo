@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Medium | CSS3 Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+            opacity: 0.8;
+        }
+
+        .demo-item {
+            background: var(--color-bg-surface);
+            border: 1px solid var(--color-primary);
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 1rem; margin: 1rem auto; width: 90%; max-width: 1200px; padding: 1rem 2rem; z-index: 100; display: flex; justify-content: space-between; align-items: center;">
+        <a href="../index.html" class="logo"
+            style="font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white;">&larr; Home</a>
+        <div style="font-weight: bold; color: var(--color-text-muted);">Module 02: Medium</div>
+    </nav>
+
+    <main style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+
+        <header style="margin-bottom: 4rem;">
+            <h1>Modern <br> <span style="color: var(--color-secondary)">Layout Systems</span></h1>
+        </header>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem;">
+            <h2>1. CSS Grid & Subgrid</h2>
+            <p>We all know `display: grid`. But <strong>Subgrid</strong> allows nested children to participate in the
+                parent's grid.</p>
+
+            <div class="demo-grid">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <pre><code class="language-css">.parent {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.child {
+  display: grid;
+  /* Hook into the parent's rows/cols! */
+  grid-template-columns: subgrid; 
+}</code></pre>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem;">
+            <h2>2. Logical Properties</h2>
+            <p>Stop using `margin-left`. What if the site is in Arabic (RTL)?</p>
+            <p>Use <strong>start</strong> and <strong>end</strong> instead.</p>
+
+            <ul style="margin-top: 1rem; padding-left: 2rem;">
+                <li><code>margin-left</code> &rarr; <span style="color: var(--color-primary)">margin-inline-start</span>
+                </li>
+                <li><code>padding-top</code> &rarr; <span style="color: var(--color-primary)">padding-block-start</span>
+                </li>
+                <li><code>width</code> &rarr; <span style="color: var(--color-primary)">inline-size</span></li>
+            </ul>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 4rem;">
+            <a href="basic.html" class="btn-neon">Previous</a>
+            <a href="advanced.html" class="btn-neon">Next: Advanced &rarr;</a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

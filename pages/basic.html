@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Foundations | CSS3 Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        /* Module Specific Styles */
+        .concept-card {
+            border-left: 3px solid var(--color-primary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            color: var(--color-primary);
+        }
+
+        pre {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: var(--border-radius-sm);
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 1rem; margin: 1rem auto; width: 90%; max-width: 1200px; padding: 1rem 2rem; z-index: 100; display: flex; justify-content: space-between; align-items: center;">
+        <a href="../index.html" class="logo"
+            style="font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white;">&larr; Home</a>
+        <div style="font-weight: bold; color: var(--color-text-muted);">Module 01: Foundations</div>
+    </nav>
+
+    <main style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+
+        <header style="margin-bottom: 4rem;">
+            <h1>The Cascade & <br> <span style="color: var(--color-accent)">Specificity</span></h1>
+            <p style="font-size: 1.2rem; color: var(--color-text-muted);">
+                Before we fly, we must stand. Understanding how the browser decides <em>which</em> style applies is the
+                difference between a Junior and a Senior.
+            </p>
+        </header>
+
+        <section class="glass-panel" style="padding: 3rem;">
+
+            <div class="concept-card">
+                <h2>1. The Cascade Layers</h2>
+                <p>The "C" in CSS stands for Cascade. It's the algorithm that solves conflicts. Modern CSS introduces
+                    <code>@layer</code> to give you total control.</p>
+
+                <pre><code class="language-css">/* The Old Way: Fighting with !important */
+.card { color: red !important; }
+
+/* The Modern PhD Way: Cascade Layers */
+@layer base, themes, utilities;
+
+@layer base {
+  .card { color: blue; }
+}
+
+@layer utilities {
+  .text-red { color: red; } /* Wins because 'utilities' is last */
+}</code></pre>
+            </div>
+
+            <div class="concept-card">
+                <h2>2. Specificity Wars</h2>
+                <p>Every selector has a weight. It's a tuple: <code>(ID, Class, Element)</code>.</p>
+                <ul style="list-style: none; margin-top: 1rem; display: grid; gap: 0.5rem;">
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 0.5rem; background: rgba(255,255,255,0.05);">
+                        <span>#header</span>
+                        <span style="color: var(--color-primary);">1, 0, 0</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 0.5rem; background: rgba(255,255,255,0.05);">
+                        <span>.nav .item</span>
+                        <span style="color: var(--color-primary);">0, 2, 0</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 0.5rem; background: rgba(255,255,255,0.05);">
+                        <span>:where(#header)</span>
+                        <span style="color: var(--color-accent);">0, 0, 0 (The Phantom ID)</span>
+                    </li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted);">
+                    <strong>Pro Tip:</strong> Use <code>:where()</code> to reduce specificity to zero, allowing easy
+                    overrides later.
+                </p>
+            </div>
+
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 4rem;">
+            <a href="#" class="btn-neon" style="opacity: 0.5; cursor: not-allowed;">Previous</a>
+            <a href="medium.html" class="btn-neon">Next: Layouts &rarr;</a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
