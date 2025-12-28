@@ -127,6 +127,7 @@ h6 {
 h1 {
     font-size: clamp(3rem, 8vw, 6rem);
     background: var(--gradient-glow);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2rem;
