@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: PhD | CSS3 Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .pipeline-diagram {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .pipeline-step {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            box-shadow: 0 0 10px var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 1rem; margin: 1rem auto; width: 90%; max-width: 1200px; padding: 1rem 2rem; z-index: 100; display: flex; justify-content: space-between; align-items: center;">
+        <a href="../index.html" class="logo"
+            style="font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white;">&larr; Home</a>
+        <div style="font-weight: bold; color: var(--color-text-muted);">Module 04: PhD</div>
+    </nav>
+
+    <main style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+
+        <header style="margin-bottom: 4rem;">
+            <h1>The Browser <br> <span style="color: var(--color-accent)">Engine</span></h1>
+            <p style="font-size: 1.2rem; color: var(--color-text-muted);">
+                Welcome to the kernel. Here we manipulate the rendering pipeline itself using Houdini and optimize for
+                60fps.
+            </p>
+        </header>
+
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem;">
+            <h2>1. The Pixel Pipeline</h2>
+            <p>Understanding which properties trigger <strong>Layout</strong> vs <strong>Paint</strong> vs
+                <strong>Composite</strong> is critical for performance.</p>
+
+            <div class="pipeline-diagram">
+                <div class="pipeline-step">JS</div>
+                <div class="pipeline-step">Style</div>
+                <div class="pipeline-step" style="opacity: 0.3; text-decoration: line-through;">Layout</div>
+                <div class="pipeline-step" style="opacity: 0.3; text-decoration: line-through;">Paint</div>
+                <div class="pipeline-step highlight">Composite</div>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                <em>Why `transform` and `opacity` are the only safe animations? Because they skip Layout and Paint,
+                    going straight to Composite (GPU).</em>
+            </p>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem;">
+            <h2>2. CSS Houdini</h2>
+            <p>Stop waiting for standard bodies. Write your own CSS features using Javascript Worklets.</p>
+
+            <h3>Paint API</h3>
+            <pre><code class="language-js">/* paint-worklet.js */
+registerPaint('blobs', class {
+  paint(ctx, size, props) {
+    ctx.fillStyle = 'hotpink';
+    ctx.beginPath();
+    ctx.arc(size.width/2, size.height/2, 50, 0, 2*Math.PI);
+    ctx.fill();
+  }
+});</code></pre>
+
+            <pre><code class="language-css">/* style.css */
+.cool-div {
+  background: paint(blobs);
+}</code></pre>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem; margin-top: 2rem; border: 1px solid var(--color-accent);">
+            <h2 style="color: var(--color-accent);">3. Shadow DOM & Encapsulation</h2>
+            <p>The dawn of true modularity. <code>:host</code>, <code>:host-context</code>, and <code>::part</code>
+                allow you to build un-breakable components.</p>
+        </section>
+
+        <div style="text-align: center; margin-top: 6rem; margin-bottom: 4rem;">
+            <p>You have reached the end of the roadmap.</p>
+            <h3 style="font-size: 2rem; margin-top: 1rem;">You are now the <span
+                    style="color: var(--color-primary);">Master</span>.</h3>
+            <a href="../index.html" class="btn-neon" style="margin-top: 2rem;">Return Home</a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
