@@ -27,6 +27,7 @@ The content is structured into four distinct academic tiers, covering the absolu
 | **2. Medium** | Layouts | CSS Grid Level 2 (**Subgrid**), Logical Properties, **:has() Selector** |
 | **3. Advanced** | Interaction | **Container Queries**, Scroll-Driven Animations, Trigonometric Functions (`sin/cos`) |
 | **4. PhD** | The Engine | Browser Rendering Pipeline, **Houdini Paint API**, Shadow DOM Encapsulation |
+| **5. 2025 🔮** | Bleeding Edge | **@scope**, **@starting-style**, **Anchor Positioning**, **color-mix()**, **text-wrap:balance** |
 
 ## 🛠️ Engineering Standards
 This project serves as a technical showcase for modern frontend practices:
