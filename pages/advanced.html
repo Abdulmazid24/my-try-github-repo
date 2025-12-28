@@ -95,7 +95,25 @@
         </section>
 
         <section class="glass-panel" style="padding: 3rem; margin-top: 2rem;">
-            <h2>3. OKLCH Colors</h2>
+            <h2>3. CSS Logic & Math</h2>
+            <p>CSS is now a programming language. Use logic to determine values.</p>
+
+            <h3>Logic</h3>
+            <code style="display:block; margin: 1rem 0;">width: clamp(300px, 50vw, 800px);</code>
+            <p style="font-size: 0.8rem;">Minimum 300px, preferred 50%, maximum 800px.</p>
+
+            <h3>Trigonometry</h3>
+            <pre><code class="language-css">/* Circular positioning */
+.item {
+  /* Calculate X and Y based on angle */
+  --angle: 45deg;
+  translate: calc(cos(var(--angle)) * 100px) 
+             calc(sin(var(--angle)) * 100px);
+}</code></pre>
+        </section>
+
+        <section class="glass-panel" style="padding: 3rem; margin-top: 2rem;">
+            <h2>4. OKLCH Colors</h2>
             <p>A new color space that actually makes sense for human perception.</p>
             <div
                 style="margin-top: 1rem; height: 50px; background: linear-gradient(to right, oklch(50% 0.2 0), oklch(50% 0.2 360)); border-radius: 8px;">

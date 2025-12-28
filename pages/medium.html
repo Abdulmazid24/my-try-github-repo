@@ -63,8 +63,28 @@
 }</code></pre>
         </section>
 
+        <section class="glass-panel" style="padding: 3rem; margin-bottom: 2rem; border-color: var(--color-primary);">
+            <h2>2. The Parent Selector :has()</h2>
+            <p>The Holy Grail of CSS. Select a parent based on its children.</p>
+
+            <pre><code class="language-css">/* Select card ONLY if it contains an image */
+.card:has(img) {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Select label ONLY if the input next to it is checked */
+input:checked + label {
+  color: var(--color-primary);
+}
+
+/* Form validation styling on the group */
+.form-group:has(input:invalid) {
+  border-color: red;
+}</code></pre>
+        </section>
+
         <section class="glass-panel" style="padding: 3rem;">
-            <h2>2. Logical Properties</h2>
+            <h2>3. Logical Properties</h2>
             <p>Stop using `margin-left`. What if the site is in Arabic (RTL)?</p>
             <p>Use <strong>start</strong> and <strong>end</strong> instead.</p>
 

@@ -58,7 +58,8 @@
             <div class="concept-card">
                 <h2>1. The Cascade Layers</h2>
                 <p>The "C" in CSS stands for Cascade. It's the algorithm that solves conflicts. Modern CSS introduces
-                    <code>@layer</code> to give you total control.</p>
+                    <code>@layer</code> to give you total control.
+                </p>
 
                 <pre><code class="language-css">/* The Old Way: Fighting with !important */
 .card { color: red !important; }
@@ -99,6 +100,28 @@
                     <strong>Pro Tip:</strong> Use <code>:where()</code> to reduce specificity to zero, allowing easy
                     overrides later.
                 </p>
+            </div>
+
+            <div class="concept-card">
+                <h2>3. Native Nesting</h2>
+                <p>Gone are the days of Sass/SCSS. You can now nest directly in CSS.</p>
+                <pre><code class="language-css">/* The Modern Way */
+.card {
+  background: white;
+  
+  /* Nesting with & */
+  & .title {
+    color: black;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (min-width: 500px) {
+    padding: 2rem;
+  }
+}</code></pre>
             </div>
 
         </section>
