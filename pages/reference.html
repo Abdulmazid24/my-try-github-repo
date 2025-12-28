@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Reference | Abdulmazid Portfolio</title>
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <meta name="author" content="Abdulmazid">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--color-primary);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            color: var(--color-text-main);
+            outline: none;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .property-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .property-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--color-primary);
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .property-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .property-name {
+            font-family: 'Fira Code', monospace;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .property-desc {
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .property-value {
+            color: var(--color-secondary);
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 1rem; margin: 1rem auto; width: 90%; max-width: 1200px; padding: 1rem 2rem; z-index: 100; display: flex; justify-content: space-between; align-items: center;">
+        <a href="../index.html" class="logo"
+            style="font-weight: 900; font-size: 1.5rem; text-decoration: none; color: white;">&larr; Home</a>
+        <div style="font-weight: bold; color: var(--color-text-muted);">CSS3 Reference Encyclopedia</div>
+    </nav>
+
+    <main style="max-width: 1000px; margin: 4rem auto; padding: 0 2rem;">
+
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1>CSS3 Reference <br><span style="color: var(--color-primary)">Encyclopedia</span></h1>
+            <p style="font-size: 1.2rem; color: var(--color-text-muted);">
+                A comprehensive guide to all modern CSS properties and their values.
+            </p>
+            <input type="text" id="searchBox" class="search-box"
+                placeholder="🔍 Search properties (e.g., 'display', 'flex', 'grid')...">
+        </header>
+
+        <div id="propertiesContainer">
+
+            <!-- LAYOUT -->
+            <section class="category-section">
+                <h2 style="color: var(--color-accent);">📐 Layout & Box Model</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="display">
+                        <div class="property-name">display</div>
+                        <div class="property-desc">Defines how an element is displayed (block, inline, flex, grid, etc.)
+                        </div>
+                        <div class="property-value">Values: block | inline | flex | grid | none | inline-block |
+                            contents</div>
+                    </div>
+                    <div class="property-item" data-name="position">
+                        <div class="property-name">position</div>
+                        <div class="property-desc">Sets the positioning method (static, relative, absolute, fixed,
+                            sticky)</div>
+                        <div class="property-value">Values: static | relative | absolute | fixed | sticky</div>
+                    </div>
+                    <div class="property-item" data-name="box-sizing">
+                        <div class="property-name">box-sizing</div>
+                        <div class="property-desc">Defines how width/height are calculated (content-box vs border-box)
+                        </div>
+                        <div class="property-value">Values: content-box | border-box</div>
+                    </div>
+                    <div class="property-item" data-name="width height">
+                        <div class="property-name">width / height</div>
+                        <div class="property-desc">Sets the width and height of an element</div>
+                        <div class="property-value">Values: auto | &lt;length&gt; | &lt;percentage&gt; | min-content |
+                            max-content | fit-content</div>
+                    </div>
+                    <div class="property-item" data-name="margin padding">
+                        <div class="property-name">margin / padding</div>
+                        <div class="property-desc">Creates space outside (margin) or inside (padding) an element</div>
+                        <div class="property-value">Values: &lt;length&gt; | &lt;percentage&gt; | auto</div>
+                    </div>
+                    <div class="property-item" data-name="overflow">
+                        <div class="property-name">overflow</div>
+                        <div class="property-desc">Controls what happens when content overflows the element box</div>
+                        <div class="property-value">Values: visible | hidden | scroll | auto | clip</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FLEXBOX -->
+            <section class="category-section">
+                <h2 style="color: var(--color-primary);">🎯 Flexbox</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="flex-direction">
+                        <div class="property-name">flex-direction</div>
+                        <div class="property-desc">Sets the direction of flex items (row or column)</div>
+                        <div class="property-value">Values: row | row-reverse | column | column-reverse</div>
+                    </div>
+                    <div class="property-item" data-name="justify-content">
+                        <div class="property-name">justify-content</div>
+                        <div class="property-desc">Aligns items along the main axis</div>
+                        <div class="property-value">Values: flex-start | flex-end | center | space-between |
+                            space-around | space-evenly</div>
+                    </div>
+                    <div class="property-item" data-name="align-items">
+                        <div class="property-name">align-items</div>
+                        <div class="property-desc">Aligns items along the cross axis</div>
+                        <div class="property-value">Values: stretch | flex-start | flex-end | center | baseline</div>
+                    </div>
+                    <div class="property-item" data-name="flex-wrap">
+                        <div class="property-name">flex-wrap</div>
+                        <div class="property-desc">Controls whether flex items wrap to new lines</div>
+                        <div class="property-value">Values: nowrap | wrap | wrap-reverse</div>
+                    </div>
+                    <div class="property-item" data-name="gap">
+                        <div class="property-name">gap</div>
+                        <div class="property-desc">Sets the spacing between flex/grid items</div>
+                        <div class="property-value">Values: &lt;length&gt; | &lt;percentage&gt;</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GRID -->
+            <section class="category-section">
+                <h2 style="color: var(--color-secondary);">⬛ CSS Grid</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="grid-template-columns">
+                        <div class="property-name">grid-template-columns</div>
+                        <div class="property-desc">Defines the columns of the grid</div>
+                        <div class="property-value">Values: none | &lt;track-list&gt; | repeat() | minmax() | auto-fit |
+                            auto-fill</div>
+                    </div>
+                    <div class="property-item" data-name="grid-template-rows">
+                        <div class="property-name">grid-template-rows</div>
+                        <div class="property-desc">Defines the rows of the grid</div>
+                        <div class="property-value">Values: none | &lt;track-list&gt; | repeat() | minmax()</div>
+                    </div>
+                    <div class="property-item" data-name="grid-area">
+                        <div class="property-name">grid-area</div>
+                        <div class="property-desc">Assigns a name to a grid item or sets its placement</div>
+                        <div class="property-value">Values: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; /
+                            &lt;row-end&gt; / &lt;column-end&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="subgrid">
+                        <div class="property-name">grid-template-columns: subgrid</div>
+                        <div class="property-desc">Allows nested grids to align with parent grid tracks</div>
+                        <div class="property-value">Values: subgrid</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TYPOGRAPHY -->
+            <section class="category-section">
+                <h2 style="color: var(--color-accent);">✍️ Typography</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="font-family">
+                        <div class="property-name">font-family</div>
+                        <div class="property-desc">Specifies the font for an element</div>
+                        <div class="property-value">Values: &lt;family-name&gt; | serif | sans-serif | monospace |
+                            system-ui</div>
+                    </div>
+                    <div class="property-item" data-name="font-size">
+                        <div class="property-name">font-size</div>
+                        <div class="property-desc">Sets the size of the font</div>
+                        <div class="property-value">Values: &lt;length&gt; | &lt;percentage&gt; | xx-small to xx-large |
+                            clamp()</div>
+                    </div>
+                    <div class="property-item" data-name="font-weight">
+                        <div class="property-name">font-weight</div>
+                        <div class="property-desc">Sets the thickness of characters</div>
+                        <div class="property-value">Values: normal | bold | 100-900 | lighter | bolder</div>
+                    </div>
+                    <div class="property-item" data-name="line-height">
+                        <div class="property-name">line-height</div>
+                        <div class="property-desc">Sets the vertical spacing between lines of text</div>
+                        <div class="property-value">Values: normal | &lt;number&gt; | &lt;length&gt; |
+                            &lt;percentage&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="letter-spacing">
+                        <div class="property-name">letter-spacing</div>
+                        <div class="property-desc">Controls the space between characters</div>
+                        <div class="property-value">Values: normal | &lt;length&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="text-align">
+                        <div class="property-name">text-align</div>
+                        <div class="property-desc">Aligns text horizontally</div>
+                        <div class="property-value">Values: left | right | center | justify | start | end</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COLORS & BACKGROUNDS -->
+            <section class="category-section">
+                <h2 style="color: var(--color-primary);">🎨 Colors & Backgrounds</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="color">
+                        <div class="property-name">color</div>
+                        <div class="property-desc">Sets the text color</div>
+                        <div class="property-value">Values: &lt;color&gt; | rgb() | rgba() | hsl() | oklch() | #hex
+                        </div>
+                    </div>
+                    <div class="property-item" data-name="background">
+                        <div class="property-name">background</div>
+                        <div class="property-desc">Shorthand for all background properties</div>
+                        <div class="property-value">Values: &lt;bg-color&gt; &lt;bg-image&gt; &lt;position&gt; /
+                            &lt;size&gt; &lt;repeat&gt; &lt;attachment&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="background-clip">
+                        <div class="property-name">background-clip</div>
+                        <div class="property-desc">Defines where the background extends to</div>
+                        <div class="property-value">Values: border-box | padding-box | content-box | text</div>
+                    </div>
+                    <div class="property-item" data-name="gradient">
+                        <div class="property-name">linear-gradient() / radial-gradient()</div>
+                        <div class="property-desc">Creates smooth color transitions</div>
+                        <div class="property-value">Values: linear-gradient(45deg, red, blue) | radial-gradient(circle,
+                            red, blue)</div>
+                    </div>
+                    <div class="property-item" data-name="opacity">
+                        <div class="property-name">opacity</div>
+                        <div class="property-desc">Sets the transparency level</div>
+                        <div class="property-value">Values: 0 (invisible) to 1 (fully visible)</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRANSFORMS & ANIMATIONS -->
+            <section class="category-section">
+                <h2 style="color: var(--color-secondary);">🎬 Transforms & Animations</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="transform">
+                        <div class="property-name">transform</div>
+                        <div class="property-desc">Applies 2D/3D transformations to an element</div>
+                        <div class="property-value">Values: translate() | rotate() | scale() | skew() | matrix() |
+                            perspective()</div>
+                    </div>
+                    <div class="property-item" data-name="transition">
+                        <div class="property-name">transition</div>
+                        <div class="property-desc">Animates property changes smoothly</div>
+                        <div class="property-value">Values: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt;
+                            &lt;delay&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="animation">
+                        <div class="property-name">animation</div>
+                        <div class="property-desc">Applies keyframe animations</div>
+                        <div class="property-value">Values: &lt;name&gt; &lt;duration&gt; &lt;timing-function&gt;
+                            &lt;delay&gt; &lt;iteration-count&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="animation-timeline">
+                        <div class="property-name">animation-timeline</div>
+                        <div class="property-desc">Links animation to scroll position (Scroll-Driven Animations)</div>
+                        <div class="property-value">Values: auto | scroll() | view()</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILTERS & EFFECTS -->
+            <section class="category-section">
+                <h2 style="color: var(--color-accent);">✨ Filters & Effects</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="filter">
+                        <div class="property-name">filter</div>
+                        <div class="property-desc">Applies graphical effects like blur, brightness, contrast</div>
+                        <div class="property-value">Values: blur() | brightness() | contrast() | grayscale() |
+                            hue-rotate() | drop-shadow()</div>
+                    </div>
+                    <div class="property-item" data-name="backdrop-filter">
+                        <div class="property-name">backdrop-filter</div>
+                        <div class="property-desc">Applies filters to the area BEHIND an element (glassmorphism)</div>
+                        <div class="property-value">Values: blur() | brightness() | contrast() | grayscale()</div>
+                    </div>
+                    <div class="property-item" data-name="box-shadow">
+                        <div class="property-name">box-shadow</div>
+                        <div class="property-desc">Adds shadow effects around an element</div>
+                        <div class="property-value">Values: &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur&gt;
+                            &lt;spread&gt; &lt;color&gt;</div>
+                    </div>
+                    <div class="property-item" data-name="mix-blend-mode">
+                        <div class="property-name">mix-blend-mode</div>
+                        <div class="property-desc">Blends element with its background</div>
+                        <div class="property-value">Values: normal | multiply | screen | overlay | darken | lighten |
+                            color-dodge</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODERN CSS -->
+            <section class="category-section">
+                <h2 style="color: var(--color-primary);">🚀 Modern CSS (PhD Level)</h2>
+                <div class="property-grid">
+                    <div class="property-item" data-name="container">
+                        <div class="property-name">container-type</div>
+                        <div class="property-desc">Enables Container Queries (query by container size, not viewport)
+                        </div>
+                        <div class="property-value">Values: normal | size | inline-size | block-size</div>
+                    </div>
+                    <div class="property-item" data-name="has">
+                        <div class="property-name">:has()</div>
+                        <div class="property-desc">Parent selector - selects element if it contains specific children
+                        </div>
+                        <div class="property-value">Example: .card:has(img) { }</div>
+                    </div>
+                    <div class="property-item" data-name="clamp">
+                        <div class="property-name">clamp()</div>
+                        <div class="property-desc">Sets a value between a minimum and maximum bound</div>
+                        <div class="property-value">Syntax: clamp(min, preferred, max) - e.g., clamp(1rem, 5vw, 3rem)
+                        </div>
+                    </div>
+                    <div class="property-item" data-name="calc">
+                        <div class="property-name">calc() / min() / max()</div>
+                        <div class="property-desc">Performs calculations for property values</div>
+                        <div class="property-value">Example: width: calc(100% - 20px); height: min(50vh, 500px)</div>
+                    </div>
+                    <div class="property-item" data-name="aspect-ratio">
+                        <div class="property-name">aspect-ratio</div>
+                        <div class="property-desc">Sets the preferred width-to-height ratio</div>
+                        <div class="property-value">Values: auto | &lt;ratio&gt; (e.g., 16/9, 1/1)</div>
+                    </div>
+                    <div class="property-item" data-name="accent-color">
+                        <div class="property-name">accent-color</div>
+                        <div class="property-desc">Sets the accent color for form controls</div>
+                        <div class="property-value">Values: auto | &lt;color&gt;</div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer
+            style="text-align: center; margin-top: 4rem; padding-bottom: 2rem; color: var(--color-text-muted); opacity: 0.7;">
+            <p>Engineered by <a href="https://abdulmazid-portfolio.vercel.app/" target="_blank"
+                    style="color: var(--color-primary); text-decoration: none;">Abdulmazid</a></p>
+        </footer>
+
+    </main>
+
+    <script src="../assets/js/app.js"></script>
+    <script>
+        // Search Functionality
+        const searchBox = document.getElementById('searchBox');
+        const propertyItems = document.querySelectorAll('.property-item');
+
+        searchBox.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+
+            propertyItems.forEach(item => {
+                const searchText = item.dataset.name + ' ' + item.textContent.toLowerCase();
+                if (searchText.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
