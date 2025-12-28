@@ -166,3 +166,37 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
+/* 6. Live Editor Styles */
+.live-editor {
+    width: 100%;
+    min-height: 150px;
+    background: #0f0f13;
+    color: var(--color-primary);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-sm);
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.live-editor:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+.playground-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .playground-area {
+        grid-template-columns: 1fr;
+    }
+}

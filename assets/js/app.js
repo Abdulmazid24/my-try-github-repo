@@ -48,3 +48,78 @@ cards.forEach(card => {
 if (!document.startViewTransition) {
   console.warn('View Transitions API not supported in this browser. Fallback to standard navigation.');
 }
+
+/* 3. Live Code Playground System */
+function initPlayground() {
+  const editors = document.querySelectorAll('.live-editor');
+
+  editors.forEach(editor => {
+    const targetId = editor.dataset.target; // ID of style block or element to update
+    const preview = document.getElementById(targetId);
+
+    // Auto-resize
+    editor.addEventListener('input', () => {
+      if (targetId.startsWith('style-')) {
+        // It's a <style> block
+        preview.textContent = editor.value;
+      } else {
+        // direct inline style injection (simpler)
+        preview.setAttribute('style', editor.value);
+      }
+    });
+  });
+}
+
+/* 4. Gamified Progress Tracker */
+function initProgress() {
+  const path = window.location.pathname;
+  const page = path.split('/').pop() || 'index.html';
+
+  if (page.includes('html')) {
+    let progress = JSON.parse(localStorage.getItem('css_mastery_progress') || '[]');
+    if (!progress.includes(page) && page !== 'index.html') {
+      progress.push(page);
+      localStorage.setItem('css_mastery_progress', JSON.stringify(progress));
+
+      // Show toast
+      showToast('🎓 Module Completed! +100 XP');
+    }
+  }
+
+  // Update UI if on index
+  if (document.querySelector('.progress-ring')) {
+    updateProgressUI();
+  }
+}
+
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.className = 'glass-panel';
+  toast.style.cssText = `
+        position: fixed; bottom: 2rem; right: 2rem; padding: 1rem 2rem;
+        border: 1px solid var(--color-primary); color: var(--color-primary);
+        font-weight: bold; transform: translateY(100px); opacity: 0;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    `;
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+
+  // Animate in
+  requestAnimationFrame(() => {
+    toast.style.transform = 'translateY(0)';
+    toast.style.opacity = '1';
+  });
+
+  // Remove
+  setTimeout(() => {
+    toast.style.transform = 'translateY(100px)';
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 500);
+  }, 3000);
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  initPlayground();
+  initProgress();
+});

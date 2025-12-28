@@ -113,16 +113,51 @@
   & .title {
     color: black;
   }
-
-  &:hover {
-    transform: scale(1.1);
-  }
-  
-  @media (min-width: 500px) {
-    padding: 2rem;
-  }
 }</code></pre>
             </div>
+
+            <!-- LIVE PLAYGROUND SECTION -->
+            <section style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <h2 style="color: var(--color-primary);">👨‍💻 Live Playground</h2>
+                <p>Don't just believe me. <strong>Break it.</strong> Change the values below to see the preview update
+                    instantly.</p>
+
+                <div class="playground-area">
+                    <div>
+                        <textarea class="live-editor" data-target="style-playground-1">
+.preview-box {
+  background: linear-gradient(45deg, #ff0055, #7000ff);
+  border-radius: 20px;
+  transform: rotate(0deg);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.preview-box:hover {
+  transform: rotate(5deg) scale(1.1);
+  filter: hue-rotate(90deg);
+}
+</textarea>
+                    </div>
+                    <div
+                        style="display: grid; place-items: center; background: rgba(0,0,0,0.3); border-radius: 12px; padding: 2rem;">
+                        <style id="style-playground-1">
+                            .preview-box {
+                                background: linear-gradient(45deg, #ff0055, #7000ff);
+                                border-radius: 20px;
+                                transform: rotate(0deg);
+                                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            }
+
+                            .preview-box:hover {
+                                transform: rotate(5deg) scale(1.1);
+                                filter: hue-rotate(90deg);
+                            }
+                        </style>
+                        <div class="preview-box"
+                            style="width: 100px; height: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></div>
+                    </div>
+                </div>
+            </section>
 
         </section>
 
